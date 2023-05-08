@@ -1,0 +1,7 @@
+# ninja log v5
+24	1288	7052744086944857	CMakeFiles/Assignment_3.dir/print_menu.cpp.obj	272a6dfa6c0e6f30
+8	1297	7052744086949842	CMakeFiles/Assignment_3.dir/student.cpp.obj	47155d2a8e8ac43a
+32	1298	7052744087144481	CMakeFiles/Assignment_3.dir/max_heap.cpp.obj	ebee89fb081dcf3e
+16	1319	7052744087538746	CMakeFiles/Assignment_3.dir/open_file.cpp.obj	bee7e36a53a5a8ae
+0	1344	7052744087808244	CMakeFiles/Assignment_3.dir/main.cpp.obj	18f609ebb4600025
+1344	1520	7052744089515670	Assignment_3.exe	7797d66c73a5779d
