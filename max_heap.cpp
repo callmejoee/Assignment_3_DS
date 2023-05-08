@@ -50,10 +50,12 @@ void print_heap(vector<Student> students) {
 
 void max_heap(vector<Student> students)
 {
+    cout << "This is inside the max_heap function" << endl;
     int size = students.size();
-    for (int i = ((size / 2) - 1); i >= 0; i++)
+    for (int i = ((size / 2) - 1); i >= 0; i--) {
+        cout << "This is before max_heapify in the for loop" << endl;
         max_heapify(students, size, i);
-
+    }
 }
 
 /**
@@ -68,7 +70,7 @@ void max_heap_menu(vector<Student> students)
 {
     int choice;
     int size;
-
+    cout << "This is before the max_heap function" << endl;
     max_heap(students);
 
     // max heap option menu
@@ -84,6 +86,7 @@ void max_heap_menu(vector<Student> students)
 //        add_student_max()
     if (choice == 2)
     {
+        cout << "This is choice 2 " << endl;
         print_heap(students);
 
     }

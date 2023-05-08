@@ -20,6 +20,8 @@ void print_heap(vector<Student> students);
 void max_heap(vector<Student> students);
 void max_heap_menu(vector<Student> students);
 void print_menu(vector<Student> students);
+void switch_option(int choice, vector<Student> students);
+
 
 
 

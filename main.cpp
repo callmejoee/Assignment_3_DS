@@ -3,13 +3,14 @@
 
 
 int main() {
-
+    int choice;
     vector<Student> students;
 
 
 // menu
-
+    open_file(students);
     print_menu(students);
+//    students[1].print_info();
 
 // Simple interface that takes the path of the file from the user
 

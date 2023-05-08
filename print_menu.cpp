@@ -11,15 +11,14 @@
  *
  * @param students
  *
- * @return void
+ * @return int choice
  */
 
 void print_menu(vector<Student> students) {
 
     int choice = 0;
 
-    while (choice != 5)
-    {
+    while (choice != 5) {
         cout << "Choose Data Structure:" << endl;
         cout << "1. BST" << endl;
         cout << "2. AVL" << endl;
@@ -28,35 +27,47 @@ void print_menu(vector<Student> students) {
         cout << "5. Exit Program" << endl;
         cout << "Enter your choice: ";
         cin >> choice;
+        switch_option(choice, students);
+    }
+}
 
-        switch (choice) {
-            case 1:
-                open_file(students);
-                // Handle BST choice
-                break;
-            case 2:
-                open_file(students);
-                // Handle AVL choice
-                break;
-            case 3:
-                open_file(students);
-                // Handle Min Heap choice
-                break;
-            case 4:
-                open_file(students);
-                // Handle Max Heap choice
-                max_heap_menu(students);
-                break;
-            case 5:
-                cout << "Exiting program..." << endl;
-                break;
-            default:
-                cout << "Invalid choice. Please try again." << endl;
-                break;
-        }
+/**
+ * switch_option - function to change between options
+ *
+ * @param choice
+ */
 
-
+void switch_option(int choice, vector<Student> students)
+{
+    switch (choice) {
+        case 1:
+//            open_file(students);
+            // Handle BST choice
+            cout << "BST";
+            break;
+        case 2:
+//            open_file(students);
+            // Handle AVL choice
+            cout << "AVL";
+            break;
+        case 3:
+//            open_file(students);
+            // Handle Min Heap choice
+            cout << "Min heap";
+            break;
+        case 4:
+//            open_file(students);
+            // Handle Max Heap choice
+            cout << "This is case 4" << endl;
+            max_heap_menu(students);
+//            cout << "Max heap";
+            break;
+        case 5:
+            cout << "Exiting program..." << endl;
+            break;
+        default:
+            cout << "Invalid choice. Please try again." << endl;
+            break;
     }
 
 }
-

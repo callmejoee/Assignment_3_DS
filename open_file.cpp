@@ -27,12 +27,12 @@ void open_file(vector<Student>& students)
     string path;
 
     cout << "Enter the file path" << endl;
-    getline(cin,path);
-
+    cin >> path;
     file.open(path, ios::in);
 
     if (file.is_open())
     {
+        cout <<  path << " is opened" << endl;
         getline(file, first_line);
         num_of_students = stoi(first_line); // convert first line from string to int
 
