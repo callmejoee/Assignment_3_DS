@@ -14,7 +14,7 @@
  * @return int choice
  */
 
-void print_menu(vector<Student> &students) {
+void print_menu(vector<Student> students) {
 
     int choice = 0;
 
@@ -37,7 +37,7 @@ void print_menu(vector<Student> &students) {
  * @param choice
  */
 
-void switch_option(int choice, vector<Student> &students)
+void switch_option(int choice, vector<Student> students)
 {
     switch (choice) {
         case 1:
@@ -49,21 +49,19 @@ void switch_option(int choice, vector<Student> &students)
             BT.BST_menu();
             break;
         }
-        case 2:
-//            open_file(students);
-            // Handle AVL choice
-            cout << "AVL";
+        case 2: {
+            AVL AV;
+            AV.load_vector(students);
+            AV.AVL_menu();
             break;
+        }
         case 3:
-//            open_file(students);
-            // Handle Min Heap choice
+
             min_heap_menu(students);
             break;
         case 4:
-//            open_file(students);
-            // Handle Max Heap choice
+
             max_heap_menu(students);
-//            cout << "Max heap";
             break;
         case 5:
             cout << "Exiting program..." << endl;
