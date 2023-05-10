@@ -6,7 +6,7 @@
 #include <iostream>
 #include <algorithm>
 #include "Student.h"
-
+#include <map>
 using namespace std;
 struct Node{
     int height ;
@@ -89,14 +89,15 @@ private:
             cnt++;
         return(cnt==1);
     }
-    void preOrder(Node *root)
+    void preOrder(Node *root , vector<string>& Departments)
     {
         if(root == NULL) {
             return;
         }
-        preOrder(root->left);
+        preOrder(root->left,Departments);
         cout << "[" << root->ID << ", " << root->Name << ", " << root->GPA << ", " << root->Department << "]" << endl;
-        preOrder(root->right);
+        Departments.push_back(root->Department);
+        preOrder(root->right,Departments);
     }
 
     Node* addStudent(Node *node, int ID, string name, double GPA, string dept) 
@@ -237,8 +238,18 @@ private:
     }
     void PrintAllAVL(Node* root)
     {
+        vector<string> departments;
+        map<string , int> dept_count;
         cout <<"print " << total_students << " Students" << endl;
-        preOrder(root);
+        preOrder(root,departments);
+          for(string s : departments)
+        {
+           dept_count[s] ++;
+        }
+        for(auto it : dept_count)
+        {
+            cout <<it.first << " " << it.second << " students\n"; 
+        }
     }
     void option()
     {

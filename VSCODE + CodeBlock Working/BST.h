@@ -4,7 +4,7 @@
 #include<string>
 #include <vector>
 #include "Student.h"
-
+#include <map>
 using namespace std;
 struct NODE{
     int ID ;
@@ -27,13 +27,14 @@ class BST {
 private:
     NODE* root;
     int Student_number;
-    void BSTInorder(NODE* root) {
+    void BSTInorder(NODE* root ,vector<string>&Departments) {
         if(root == NULL) {
             return;
         }
-        BSTInorder(root->left);
+        BSTInorder(root->left , Departments);
         cout << "[" << root->ID << ", " << root->Name << ", " << root->GPA << ", " << root->Department << "]" << endl;
-        BSTInorder(root->right);
+        Departments.push_back(root->Department); 
+        BSTInorder(root->right, Departments);
     }
     bool isLeaf(NODE * tmp)
     {
@@ -104,7 +105,18 @@ private:
     void printAllBST()
     {
         cout <<"print " << Student_number << " Students" << endl;
-        BSTInorder(root);
+        vector<string> departments;
+        map<string , int> dept_count;
+        BSTInorder(root , departments);
+        for(string s : departments)
+        {
+           dept_count[s] ++;
+        }
+
+        for(auto it : dept_count)
+        {
+            cout <<it.first << " " << it.second << " students\n"; 
+        }
     }
 
     void removeStudent(int ID)
