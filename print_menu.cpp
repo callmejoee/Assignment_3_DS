@@ -43,8 +43,12 @@ void switch_option(int choice, vector<Student> &students)
         case 1:
 //            open_file(students);
             // Handle BST choice
-            cout << "BST";
+        {
+            BST BT;
+            BT.load_vector(students);
+            BT.BST_menu();
             break;
+        }
         case 2:
 //            open_file(students);
             // Handle AVL choice

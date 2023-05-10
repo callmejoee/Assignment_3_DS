@@ -11,6 +11,8 @@
 #include <string>
 #include <vector>
 #include "student.h"
+#include "AVL+BST/AVL.h"
+#include "AVL+BST/BST.h"
 
 using namespace std;
 

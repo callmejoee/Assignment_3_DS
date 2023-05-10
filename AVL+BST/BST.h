@@ -1,6 +1,7 @@
 #ifndef BST_H
 #define BST_H
 #include <iostream>
+#include "../main.h"
 using namespace std;
 struct NODE{
     int ID ;
@@ -277,6 +278,18 @@ public:
             }
         }while (choice !=5); // do-while loop to ensure the loop runs at least once
     }
+
+    // function to load the data to the BST class
+
+    void load_vector(vector<Student> students)
+    {
+        for (int i = 0; i < students.size(); i++)
+        {
+            this->addStudent(this->Get_Root(), students[i].get_id(), students[i].get_name(),students[i].get_gpa(), students[i].get_department());
+
+        }
+    }
+
     
 };
 

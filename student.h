@@ -26,6 +26,11 @@ public:
     float get_gpa();
 
 
+    int get_id();
+
+    string get_name();
+
+    string get_department();
 };
 
 #endif //STUDENT_H

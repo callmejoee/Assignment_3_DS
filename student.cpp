@@ -32,3 +32,15 @@ void Student::swap (Student &first, Student &other){
 float Student:: get_gpa(){
     return (gpa);
 }
+
+int Student::get_id() {
+    return (id);
+}
+
+string Student::get_name() {
+    return (name);
+}
+
+string Student::get_department() {
+    return (department);
+}
