@@ -5,6 +5,8 @@
 
 #include <iostream>
 #include <algorithm>
+#include "../main.h"
+
 using namespace std;
 struct Node{
     int height ;
@@ -319,6 +321,23 @@ public:
             }
         }while (choice !=5); // do-while loop to ensure the loop runs at least once
     }
+
+
+    // load vector to AVL
+    // loads the correct total number of students but doesn't print any students <--------------- FIX --------------->
+    Node *load_vector(vector<Student> students)
+    {
+        Node *root = nullptr;
+        for (int i = 0; i < students.size(); i++)
+        {
+            root = addStudent(root, students[i].get_id(), students[i].get_name(),students[i].get_gpa(), students[i].get_department());
+
+        }
+        return (root);
+    }
+
+
+
 };
 
 
